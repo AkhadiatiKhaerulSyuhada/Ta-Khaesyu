@@ -1,0 +1,491 @@
+/* Mengatur layout dasar dengan Flexbox */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Tinggi minimum 100% viewport */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    scroll-behavior: smooth;
+    /* Menambahkan scroll halus untuk anchor links */
+}
+
+/* Reset untuk memastikan konsistensi tampilan di berbagai browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling Header */
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    color: white;
+    position: sticky;
+    /* Membuat navbar sticky */
+    top: 0;
+    /* Menjaga navbar tetap di atas saat scroll */
+    z-index: 1000;
+    /* Memastikan navbar berada di atas konten lainnya */
+    width: 100%;
+    /* Membuat navbar mengambil lebar penuh */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    /* Menambahkan bayangan agar navbar terlihat lebih jelas */
+}
+
+/* Bagian dalam header */
+header .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+header .logo {
+    max-width: 150px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #3bb100;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+header nav ul li a:focus {
+    outline: none;
+    color: #3bb100;
+}
+
+/* Bagian konten utama yang akan mengisi ruang */
+section#home {
+    flex: 1;
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+}
+
+section#home .intro {
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Latar belakang transparan untuk keterbacaan */
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* Styling untuk tombol CTA */
+.cta-button {
+    background-color: #3bb100;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #000000;
+}
+
+/* Section Intro untuk konten utama */
+#home .intro h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+#home .intro p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #fcfcfc;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+/* Responsivitas untuk tampilan mobile */
+@media (max-width: 768px) {
+    header .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 0 0 0;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .intro {
+        padding: 50px 20px;
+    }
+}
+
+/* Styling untuk spesies bonsai */
+#popular-species {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#popular-species h3 {
+    font-size: 2em;
+    color: #000000;
+    margin-bottom: 40px;
+}
+
+.species-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.species {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.species:hover {
+    transform: translateY(-10px);
+}
+
+.species img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.species h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.species p {
+    color: #000000;
+}
+
+/* Styling untuk perawatan bonsai */
+/* Styling untuk perawatan bonsai yang mirip dengan tampilan spesies populer dan blog */
+#bonsai-care {
+    background-color: #f1f1f1;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#bonsai-care h3 {
+    font-size: 2em;
+    color: #000000;
+    margin-bottom: 40px;
+}
+
+.care-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.care-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.care-item:hover {
+    transform: translateY(-10px);
+}
+
+.care-item img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.care-item h4 {
+    font-size: 1.5em;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.care-item p {
+    color: #000000;
+    font-size: 1.2em;
+}
+
+/* Responsivitas untuk tampilan mobile */
+@media (max-width: 768px) {
+    #bonsai-care .care-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .care-item {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Styling untuk bagian pendaftaran */
+#pendaftaran {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#pendaftaran h2 {
+    font-size: 2.5em;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+#pendaftaran form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#pendaftaran input,
+#pendaftaran select {
+    padding: 12px;
+    font-size: 1.1em;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+#pendaftaran input:focus,
+#pendaftaran select:focus {
+    outline: none;
+    border-color: #04ff00;
+}
+
+#pendaftaran button {
+    background-color: #05ae03;
+    color: white;
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#pendaftaran button:hover {
+    background-color: #000000;
+}
+
+#pendaftaran button:focus {
+    outline: none;
+}
+
+/* Styling untuk bagian footer */
+footer {
+    background-color: #000000;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    position: relative;
+    width: 100%;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+/* Responsivitas untuk tampilan mobile */
+@media (max-width: 768px) {
+    #pendaftaran form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #pendaftaran input,
+    #pendaftaran select,
+    #pendaftaran button {
+        font-size: 1em;
+    }
+
+    .species-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .species {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Responsivitas untuk tampilan yang lebih kecil */
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 10px;
+    }
+
+    header nav ul li {
+        font-size: 0.9em;
+    }
+
+    .cta-button {
+        font-size: 1.1em;
+        padding: 12px 18px;
+    }
+
+    #home .intro h2 {
+        font-size: 2em;
+    }
+
+    #home .intro p {
+        font-size: 1em;
+    }
+}
+
+/* Styling untuk bagian Blog */
+#blog {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#blog h3 {
+    font-size: 2em;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.blog-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.blog-post {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex; /* Tambahkan display flex pada .blog-post */
+    flex-direction: column; /* Mengatur konten menjadi kolom */
+    align-items: center; /* Memusatkan konten secara horizontal */
+    justify-content: flex-start; /* Menjaga konten tetap di atas */
+}
+
+.blog-post:hover {
+    transform: translateY(-10px);
+}
+
+.blog-post img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: block; /* Pastikan gambar menjadi block untuk memudahkan pemusatan */
+    margin-left: auto; /* Memusatkan gambar secara horizontal */
+    margin-right: auto;
+}
+
+.blog-post h4 {
+    font-size: 1.5em;
+    color: #000000;
+    margin-bottom: 10px;
+    text-align: center; /* Menjaga judul tetap terpusat */
+}
+
+.blog-post p {
+    color: #000000;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.blog-post a {
+    color: #3ab700;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.blog-post a:hover {
+    color: #000000;
+}
+
+/* Responsivitas untuk tampilan mobile */
+@media (max-width: 768px) {
+    .blog-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blog-post {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}

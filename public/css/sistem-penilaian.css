@@ -1,0 +1,226 @@
+/* Mengatur layout dasar dengan Flexbox */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    /* Set default text color to white */
+}
+
+/* Styling untuk header */
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    color: white;
+    position: sticky;
+    /* Membuat navbar sticky */
+    top: 0;
+    /* Menjaga navbar tetap di atas saat scroll */
+    z-index: 1000;
+    /* Memastikan navbar berada di atas konten lainnya */
+    width: 100%;
+    /* Membuat navbar mengambil lebar penuh */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    /* Menambahkan bayangan agar navbar terlihat lebih jelas */
+}
+
+header .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Styling logo agar posisinya konsisten */
+header .logo {
+    max-width: 150px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #3bb100;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+header nav ul li a:focus {
+    outline: none;
+    color: #3bb100;
+}
+
+/* Styling untuk active link (tombol yang sedang diklik) */
+header nav ul li a.active {
+    background-color: #33cc33; /* Hijau untuk link aktif */
+    color: white;
+}
+
+/* Bagian konten utama untuk pendaftaran dan sistem penilaian */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    color: white;
+    height: auto;
+    box-sizing: border-box;
+}
+
+/* Styling untuk judul */
+section h2,
+h3 {
+    font-size: 2em;
+    /* Sesuaikan ukuran font judul */
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Styling penjelasan sebelum form */
+section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: white;
+}
+
+/* Styling form pendaftaran */
+form {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+/* Styling untuk input form dan tombol */
+form input,
+form select,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form input,
+form select {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+form input::placeholder,
+form select::placeholder {
+    color: #666;
+}
+
+form button {
+    background-color: #33cc33; /* Hijau untuk tombol */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #28a828; /* Hijau gelap saat hover */
+}
+
+/* Styling untuk footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+/* Styling untuk bagian penilaian bonsai */
+section ul {
+    text-align: left;
+    margin-left: 20px;
+    list-style: disc;
+}
+
+section ul li {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: white;
+}
+
+/* Penyesuaian untuk responsivitas mobile */
+@media (max-width: 768px) {
+    header .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 0 0 0;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    section {
+        padding: 50px 20px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    section h2,
+    h3 {
+        font-size: 1.8em;
+    }
+
+    section ul {
+        margin-left: 10px;
+    }
+}
